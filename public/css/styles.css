@@ -1,0 +1,188 @@
+/* 全体 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* 共通部分 */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+.main-header .nav-bar {
+    background-color: rgba(0, 255, 0, 0.3);
+    padding-left: 10px;
+    line-height: 40px;
+    font-style: italic;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* フォーム部分 */
+#bbs-wrapper .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 140px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 86%;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="text"], textarea {
+    -webkit-appearance: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 86%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.input-submit {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin-right: 50px;
+    padding: 7px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #FFF;
+    background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+    transition: 1.0s;
+}
+
+/* コメント投稿フォーム部分 */
+#bbs-wrapper .container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* コメント記入・表示部分 */
+/* BEM記法を意識して書き直したい */
+#comment-submit-wrapper .container {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+#comment-submit-wrapper #comment-display-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comment-submit .input-body, 
+.comment-display-area .comment-input-posts {
+    display: inline-block;
+    position: relative;
+    margin-left: 1.0rem;
+}
+
+.comment-submit .post-it, 
+.comment-display-area .post-it {
+    resize: none;
+    height: 12rem;
+    width: 14rem;
+    margin-top: 30px;
+    margin-left: 20px;
+    border: none;
+    padding: 1.0em;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 0.5rem hsla(0, 0%, 0%, .1);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.comment-submit .btn-submit {
+    position: absolute;
+    right: 10px;
+    bottom: 35px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #f2fcff;
+    border: dashed 1px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.comment-submit .post-it-blue, 
+.comment-display-area .post-it-blue {
+    background-image: 
+    linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), 
+    linear-gradient(180deg, hsla(200, 100%, 85%, 1), hsla(200, 100%, 85%, 1));
+}
+
+.comment-display-area .btn-submit-delete {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: inline-block;
+    padding: 1.5em 1em;
+    color: blue;
+    text-decoration: underline;
+    background: none;
+    border: none;
+}
+
+/* ページネーション */
+.paginationWrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 38px;
+    margin-bottom: 40px;
+}
+
+.paginationWrap ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.paginationWrap ul.pagination li {
+  display: inline;
+  margin-right: 4px;
+}
+
+.paginationWrap ul.pagination li a {
+    color: #2f3859;
+    padding: 8px 14px;
+    text-decoration: none;
+}
+
+.paginationWrap ul.pagination li a.active {
+    background-color: #4b90f6;
+    color: white;
+    border-radius: 40px;
+    width: 38px;
+    height: 38px;
+}
+
+.paginationWrap ul.pagination li a:hover:not(.active) {
+    background-color: rgba(0, 255, 0, 0.3);
+    border-radius: 40px;
+}
