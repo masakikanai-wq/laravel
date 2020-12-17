@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::resource('article', 'ArticleController');
+
+
+// ArticleControlloer
+// 記事一覧画面を表示
+Route::get('/', 'ArticleController@index')->name('articles');
+
+// 記事登録するメソッド
+Route::post('/create', 'ArticleController@create')->name('create');
+
+// 記事詳細画面を表示
+Route::get('/article/{id}', 'ArticleController@show')->name('show');
+
+// 記事削除
+Route::DELETE('/destroy/article/{id}', 'ArticleController@destroy')->name('article.destroy');
+
+
+// CommentController
+// コメント登録
+Route::post('/comment', 'CommentController@store')->name('comment.store');
+
+// コメント削除
+Route::DELETE('/destroy/comment/{id}', 'CommentController@destroy')->name('comment.destroy');
