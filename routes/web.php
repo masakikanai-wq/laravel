@@ -30,6 +30,12 @@ Route::post('/create', 'ArticleController@create')->name('create');
 // 記事詳細画面を表示
 Route::get('/article/{id}', 'ArticleController@show')->name('show');
 
+// 記事編集
+Route::get('/article/edit/{id}', 'ArticleController@edit')->name('article.edit');
+
+// 記事更新
+Route::PUT('/article/update/{id}', 'ArticleController@update')->name('article.update');
+
 // 記事削除
 Route::DELETE('/destroy/article/{id}', 'ArticleController@destroy')->name('article.destroy');
 

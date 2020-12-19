@@ -5,17 +5,10 @@
     <div class="bbs">
         <h2 class="content-header">さぁ、最新のニュースをシェアしましょう！</h2>
         <!-- エラーメッセージ表示 -->
-        <!-- この部分いらないので後で削除 -->
-        <?php if (!empty($error_message)):?>
-            <ul>
-                <?php foreach($error_message as $value): ?>
-                    <li><?php echo $value; ?></li>
-                <?php endforeach ?>
-            </ul>
-        <?php endif; ?>
-        <!-- エラーメッセージ表示 -->
         @if (session('err_msg'))
-            <p class="text-danger">{{ session('err_msg')}}</p>
+            <div class="flash_message bg-success text-center py-3 my-0">
+                <p class="text-danger">{{ session('err_msg')}}</p>
+            </div>
         @endif
         <!-- 投稿フォーム -->
         <!-- actionのところに書くルーティングはこれで合っているか確認する -->

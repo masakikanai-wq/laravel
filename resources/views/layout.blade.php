@@ -35,6 +35,12 @@
             @yield('post')
         </div>
     </section>
+    <!-- 記事編集フォーム -->
+    <section id="bbs-edit-wrapper">
+        <div class="container">
+            @yield('postEdit')
+        </div>
+    </section>
     <!-- ラインの表示 -->
     <section>
         <div class="container">
