@@ -92,6 +92,8 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        $article = Article::findOrFail($id);
+        return view('article.edit', ['article' => $article]);
     }
 
 
@@ -101,9 +103,24 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(ArticleRequest $request)
     {
         //
+        // リクエストされた情報を全て受け取る処理
+        $inputs = [
+            'id' => $request->id,
+            'title' => $request->title,
+            'content' => $request->content,
+        ];
+
+        $article = Article::findOrFail($request->id);
+        $article->fill($inputs)->save();
+
+        // 記事が登録されたときのフラッシュを表示
+        \Session::flash('err_msg', '記事を更新しました');
+
+        return redirect(route('articles'));
+
     }
 
 

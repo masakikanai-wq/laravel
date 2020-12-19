@@ -9,8 +9,7 @@
         </div>
         <p>{{ $article->content }}</p>
         <p class="routing"><a href="/">一覧に戻る</a></p>
-        <!-- aタグではなくformにしないとデータを送れない？ -->
-        <!-- <p class="routing"><a href="{{ route('article.destroy', $article->id) }}">この記事を削除する</a></p> -->
+        <p class="routing"><a href="{{ route('article.edit', $article->id) }}">編集</a></p>
         <form method="POST" action="{{ route('article.destroy', $article->id) }}">
             @csrf
             @method('DELETE')
